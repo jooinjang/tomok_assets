@@ -1,15 +1,112 @@
+import sys
+import os
 
-    import sys
-    import os
+current_dir = os.path.dirname(__file__)
+parent_dir = os.path.dirname(current_dir)
+sys.path.append(parent_dir)
 
-    current_dir = os.path.dirname(__file__)
-    parent_dir = os.path.dirname(current_dir)
-    sys.path.append(parent_dir)
+from tomok.core.rule_unit import RuleUnit
+from tomok.core.decorator import rule_method
 
-    from tomok.core.rule_unit import RuleUnit
-    from tomok.core.decorator import rule_method
+import math
+from typing import List
 
-    import math
-    from typing import List
-    
-{"nbformat":4,"nbformat_minor":0,"metadata":{"colab":{"provenance":[{"file_id":"1CF4mEkZIkJEDv_3YWrDJKpMvliJCsObv","timestamp":1694582086331},{"file_id":"1AjfPs7fZq571GayM7OCK45oG46DxPiKP","timestamp":1694578487763},{"file_id":"1RLG-ElL-RB0QZTLLAzUcuXGBF2BqOw1t","timestamp":1691543517336},{"file_id":"1T-kPFUJTy0JUtisu6LLIsNK6yjl9AE5z","timestamp":1690960458929},{"file_id":"1FKcEkmC8sjFendaUJI5nY9FQVPYBFWnt","timestamp":1689903322566},{"file_id":"1p6jLaorqf3Zl1Og2wHOctERtkgjwBjrU","timestamp":1689753625918},{"file_id":"15jZPegTcUqCXxee33FxMzfCjeMAwcNRA","timestamp":1688037542443}]},"kernelspec":{"name":"python3","display_name":"Python 3"},"language_info":{"name":"python"}},"cells":[{"cell_type":"markdown","source":["# Rule Unit 작성 예시\n","\n","본 문서는 1차년도 6월에 개발된 RuleUnit 클래스를 활용하여 룰 유닛을 작성하고 실행하는 과정을 설명합니다."],"metadata":{"id":"-0-qnEblh80w"}},{"cell_type":"markdown","source":["⚠︎ 주의사항: 코드를 변경하며 작업할 때는, 사본을 생성한 후 작업해주십시오."],"metadata":{"id":"AR83L9Pxh_6F"}},{"cell_type":"markdown","source":["## 룰 유닛 작성하기\n","이 부분에서는 기존의 IFC 파일에 종속적이었던 실행 흐름에서 벗어나, 새로이 정의한 RuleUnit 구조에 기반하여 룰에 포함된 항목을 작성하는 방법을 다룹니다.<br><br>\n","본 예시에서는 KDS 24 14 21 4.6.5.1(5) 를 룰 유닛으로 작성합니다."],"metadata":{"id":"33RPd0N_iCuY"}},{"cell_type":"markdown","source":["먼저, Rule 작성에 필요한 프로그램을 불러오기 위해 Github에서 아래의 주소가 가리키는 파일 모음을 불러옵니다. (Github Repository를 clone합니다.)"],"metadata":{"id":"qL08gaStiE0L"}},{"cell_type":"code","source":["!git clone https://github.com/KU-HIAI/.git"],"metadata":{"colab":{"base_uri":"https://localhost:8080/"},"id":"5AR_68PDk-KZ","executionInfo":{"status":"ok","timestamp":1699253378904,"user_tz":-540,"elapsed":720,"user":{"displayName":"digitalcodes KICT","userId":"11324252449574396480"}},"outputId":"040793a1-5225-45e7-b419-11a4242c37a5"},"execution_count":null,"outputs":[{"output_type":"stream","name":"stdout","text":["Cloning into ''...\n","remote: Enumerating objects: 147, done.\u001b[K\n","remote: Counting objects: 100% (89/89), done.\u001b[K\n","remote: Compressing objects: 100% (63/63), done.\u001b[K\n","remote: Total 147 (delta 45), reused 63 (delta 26), pack-reused 58\u001b[K\n","Receiving objects: 100% (147/147), 129.26 KiB | 10.77 MiB/s, done.\n","Resolving deltas: 100% (53/53), done.\n"]}]},{"cell_type":"markdown","source":["필요한 파일을 불러온 다음에는 현재 작업 경로를 의 파일이 있는 위치로 이동합니다.<br><br>\n","아래의 코드 블록을 실행하면, 작성자의 기본 작업 경로가 필요한 파일이 있는 위치로 이동됩니다."],"metadata":{"id":"poob594xiNFU"}},{"cell_type":"code","source":["cd "],"metadata":{"colab":{"base_uri":"https://localhost:8080/"},"id":"qyIxAqkriO26","executionInfo":{"status":"ok","timestamp":1699253380645,"user_tz":-540,"elapsed":5,"user":{"displayName":"digitalcodes KICT","userId":"11324252449574396480"}},"outputId":"64bdf7b9-4c6f-4f45-aa6c-c2de2644a6c2"},"execution_count":null,"outputs":[{"output_type":"stream","name":"stdout","text":["/content/\n"]}]},{"cell_type":"markdown","source":["RuleUnit의 실행 함수는 기존의 OKNGResult 클래스를 활용하지 않고, 해당 실행함수의 기준을 만족하였는지의 여부를 bool 타입의 값(참/거짓)으로 반환합니다."],"metadata":{"id":"vsLFVLLCidR7"}},{"cell_type":"markdown","source":["## 룰 유닛 작성해보기\n","지금까지의 내용을 바탕으로 룰 유닛을 작성해봅시다.\n","\n","새로운 룰 유닛을 작성하기 위해서는, 아래 코드 블럭에서 클래스 이름, 메타정보에 해당하는 변수, 실행 함수의 이름과 내용을 수정하면 됩니다."],"metadata":{"id":"8lGDCXNZiej5"}},{"cell_type":"code","source":["import math\n","from typing import List\n","\n","import \n","\n","# 작성하는 룰에 맞게 클래스 이름 수정 (KDS241711_04060303_04)\n","class KDS241711_04060303_04(.RuleUnit): # KDS241711_04060303_04\n","\n","    # 아래 클래스 멤버 변수에 할당되는 값들을 작성하는 룰에 맞게 수정\n","    priority = 1   # 건설기준 우선순위\n","    author = 'Chanwoo Yang'  # 작성자명\n","    ref_code = 'KDS 24 17 11 4.6.3.3 (4)' # 건설기준문서\n","    ref_date = '2022-02-25'  # 디지털 건설문서 작성일  (고시일)\n","    doc_date = '2023-10-12'  # 건설기준문서->디지털 건설기준 변환 기준일 (작성 년월)\n","    title = '겹침이음'   # 건설기준명\n","\n","    # 건설기준문서항목 (분류체계정보)\n","    description = \"\"\"\n","    교량내진설계기준(한계상태설계법)\n","    4. 설계\n","    4.6 콘크리트교 설계\n","    4.6.3 기둥\n","    4.6.3.3 축방향철근과 횡방향철근\n","    (4)\n","    \"\"\"\n","    # https://dillinger.io/ 표와 이미지 랜더링 확인 사이트\n","    # 이미지 링크 변환 사이트 https://www.somanet.xyz/2017/06/blog-post_21.html\n","    # 건설기준문서내용(text)\n","    content = \"\"\"\n","    #### 4.6.3.3 축방향철근과 횡방향철근\n","    \\n (4) 소성힌지구역 이외의 구역에서 전체 축방향철근 중 1/2을 초과하여 겹침이음하지 않아야 한다. 기둥의 종방향으로 측정한 이웃하는 겹침이음 사이의 거리는 600mm 이상이어야 한다. 이때 겹침이음 사이의 거리는 겹침이음의 끝 지점에서부터 기둥의 종방향으로 측정하여, 이웃하는 새로운 겹침이음이 시작되는 지점까지로 한다.\n","    \"\"\"\n","\n","    # 플로우차트(mermaid)\n","    flowchart = \"\"\"\n","  flowchart TD\n","\tsubgraph Python_Class\n","\tA([축방향철근과 횡방향철근])\n","\tB[\"KDS 24 17 11 4.6.3.3 (4)\"]\n","\tA ~~~ B\n","\tend\n","\n","\tsubgraph Variable_def\n","\tVarIn1[/입력변수: 겹침이음/]\n","\tVarIn2[/입력변수: 겹침이음 사이의 거리/]\n","\tend\n","\n","\tPython_Class ~~~ Variable_def--> D --> E & F --> G\n","\n","\tD[\"소성힌지구역 이외의 구역\"]\n","\tE[\"전체 축방향철근x1/2 > 겹침이음\"]\n","\tF[\"겹침이음 사이의 거리 ≥  600mm\"]\n","  G([Pass or Fail])\n","    \"\"\"\n","\n","    # 작성하는 룰에 맞게 함수 이름과 내용을 수정\n","    @.rule_method\n","    def lap_joint(fIlapjoi,fIdilajo,fItozxre) -> bool:\n","        \"\"\"겹침이음\n","\n","        Args:\n","            fIlapjoi (float): 겹침이음.\n","            fIdilajo (float): 겹침이음 사이의 거리.\n","            fItoaxre (float): 전체 축방향철근.\n","\n","        Returns:\n","            bool: 교량내진설계기준(한계상태설계법) 4.6.3.3 축방향철근과 횡방향철근 (4)의 통과 여부\n","        \"\"\"\n","\n","        if fIlapjoi <= 0.5 * fItozxre and fIdilajo >= 600:\n","          return \"Pass\"\n","        else:\n","          return \"Fail\""],"metadata":{"id":"rfDi2pQqicoD"},"execution_count":null,"outputs":[]},{"cell_type":"code","source":["my_RuleUnit = KDS241711_04060303_04()"],"metadata":{"id":"D1Pm_gEtikei"},"execution_count":null,"outputs":[]},{"cell_type":"code","source":["fIlapjoi = 28\n","fIdilajo = 800\n","fItozxre = 60"],"metadata":{"id":"HVyDu2z7imJC"},"execution_count":null,"outputs":[]},{"cell_type":"code","source":["Rule_Review_Result = my_RuleUnit.lap_joint(fIlapjoi,fIdilajo,fItozxre)\n","print(\"RuleUnit Review Result: {}\".format(Rule_Review_Result))"],"metadata":{"id":"UDa_8Sh_iraQ","executionInfo":{"status":"ok","timestamp":1699253395897,"user_tz":-540,"elapsed":348,"user":{"displayName":"digitalcodes KICT","userId":"11324252449574396480"}},"colab":{"base_uri":"https://localhost:8080/"},"outputId":"f43d76a4-775a-4511-85df-564b26ef22ce"},"execution_count":null,"outputs":[{"output_type":"stream","name":"stdout","text":["RuleUnit Review Result: Pass\n"]}]},{"cell_type":"markdown","source":["<br><br>\n","아래의 코드를 통해, 룰 유닛의 content(건설기준 항목의 실제 내용)의 markdown 렌더링 결과를 확인할 수 있습니다."],"metadata":{"id":"7TnAwYSbiqpE"}},{"cell_type":"code","source":["my_RuleUnit.render_markdown()"],"metadata":{"id":"3BSi3TyUiu6H","executionInfo":{"status":"ok","timestamp":1699253399800,"user_tz":-540,"elapsed":362,"user":{"displayName":"digitalcodes KICT","userId":"11324252449574396480"}},"colab":{"base_uri":"https://localhost:8080/","height":98},"outputId":"c81cb097-0a72-43a4-ce82-6ea6e61f52ee"},"execution_count":null,"outputs":[{"output_type":"display_data","data":{"text/plain":["<IPython.core.display.Markdown object>"],"text/markdown":"\n    #### 4.6.3.3 축방향철근과 횡방향철근\n    \n (4) 소성힌지구역 이외의 구역에서 전체 축방향철근 중 1/2을 초과하여 겹침이음하지 않아야 한다. 기둥의 종방향으로 측정한 이웃하는 겹침이음 사이의 거리는 600mm 이상이어야 한다. 이때 겹침이음 사이의 거리는 겹침이음의 끝 지점에서부터 기둥의 종방향으로 측정하여, 이웃하는 새로운 겹침이음이 시작되는 지점까지로 한다.\n    "},"metadata":{}}]}]}
+# 작성하는 룰에 맞게 클래스 이름 수정 (KDS241711_04060303_04)
+class KDS241711_04060303_04(RuleUnit): # KDS241711_04060303_04
+
+    # 아래 클래스 멤버 변수에 할당되는 값들을 작성하는 룰에 맞게 수정
+    priority = 1   # 건설기준 우선순위
+    author = 'Chanwoo Yang'  # 작성자명
+    ref_code = 'KDS 24 17 11 4.6.3.3 (4)' # 건설기준문서
+    ref_date = '2022-02-25'  # 디지털 건설문서 작성일  (고시일)
+    doc_date = '2023-10-12'  # 건설기준문서->디지털 건설기준 변환 기준일 (작성 년월)
+    title = '겹침이음'   # 건설기준명
+
+    # 건설기준문서항목 (분류체계정보)
+    description = """
+    교량내진설계기준(한계상태설계법)
+    4. 설계
+    4.6 콘크리트교 설계
+    4.6.3 기둥
+    4.6.3.3 축방향철근과 횡방향철근
+    (4)
+    """
+    # https://dillinger.io/ 표와 이미지 랜더링 확인 사이트
+    # 이미지 링크 변환 사이트 https://www.somanet.xyz/2017/06/blog-post_21.html
+    # 건설기준문서내용(text)
+    content = """
+    #### 4.6.3.3 축방향철근과 횡방향철근
+    \n (4) 소성힌지구역 이외의 구역에서 전체 축방향철근 중 1/2을 초과하여 겹침이음하지 않아야 한다. 기둥의 종방향으로 측정한 이웃하는 겹침이음 사이의 거리는 600mm 이상이어야 한다. 이때 겹침이음 사이의 거리는 겹침이음의 끝 지점에서부터 기둥의 종방향으로 측정하여, 이웃하는 새로운 겹침이음이 시작되는 지점까지로 한다.
+    """
+
+    # 플로우차트(mermaid)
+    flowchart = """
+  flowchart TD
+	subgraph Python_Class
+	A([축방향철근과 횡방향철근])
+	B["KDS 24 17 11 4.6.3.3 (4)"]
+	A ~~~ B
+	end
+
+	subgraph Variable_def
+	VarIn1[/입력변수: 겹침이음/]
+	VarIn2[/입력변수: 겹침이음 사이의 거리/]
+	end
+
+	Python_Class ~~~ Variable_def--> D --> E & F --> G
+
+	D["소성힌지구역 이외의 구역"]
+	E["전체 축방향철근x1/2 > 겹침이음"]
+	F["겹침이음 사이의 거리 ≥  600mm"]
+  G([Pass or Fail])
+    """
+
+    # 작성하는 룰에 맞게 함수 이름과 내용을 수정
+    @rule_method
+    def lap_joint(fIlapjoi,fIdilajo,fItozxre) -> bool:
+        """겹침이음
+
+        Args:
+            fIlapjoi (float): 겹침이음.
+            fIdilajo (float): 겹침이음 사이의 거리.
+            fItoaxre (float): 전체 축방향철근.
+
+        Returns:
+            bool: 교량내진설계기준(한계상태설계법) 4.6.3.3 축방향철근과 횡방향철근 (4)의 통과 여부
+        """
+
+        if fIlapjoi <= 0.5 * fItozxre and fIdilajo >= 600:
+          return "Pass"
+        else:
+          return "Fail"
+
+
+# In[ ]:
+
+
+my_RuleUnit = KDS241711_04060303_04()
+
+
+# In[ ]:
+
+
+fIlapjoi = 28
+fIdilajo = 800
+fItozxre = 60
+
+
+# In[ ]:
+
+
+Rule_Review_Result = my_RuleUnit.lap_joint(fIlapjoi,fIdilajo,fItozxre)
+print("RuleUnit Review Result: {}".format(Rule_Review_Result))
+
+
+# <br><br>
+# 아래의 코드를 통해, 룰 유닛의 content(건설기준 항목의 실제 내용)의 markdown 렌더링 결과를 확인할 수 있습니다.
+
+# In[ ]:
+
+
+my_RuleUnit.render_markdown()
+
