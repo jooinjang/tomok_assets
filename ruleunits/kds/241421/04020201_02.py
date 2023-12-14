@@ -69,7 +69,7 @@ class KDS241421_04020201_02 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Stress_in_steel(fItensrb,fIfy,fIstrpst,fIfpu,fIuserdefined) -> bool:
+    def Stress_in_steel(fItensrb, fIfy, fIstrpst, fIfpu) -> bool:
         """강재의 응력
 
         Args:

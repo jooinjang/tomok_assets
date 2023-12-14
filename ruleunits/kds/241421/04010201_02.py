@@ -63,7 +63,7 @@ class KDS241421_04010201_02 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Design_shear_strength_of_members_without_shear_rebar(fOVd,fIVcd) -> float:
+    def Design_shear_strength_of_members_without_shear_rebar(fIVcd) -> float:
         """전단보강철근이 없는 부재의 설계전단강도
 
         Args:

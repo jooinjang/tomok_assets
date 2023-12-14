@@ -80,7 +80,7 @@ class KDS241421_04020302_03 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Minimum_amount_of_rebar(fOAsmin,fIAp,fIxi1,fIxi,fIdb,fIdpeq,fIdwire,fIAsmin,fIuserdefined1,fIuserdefined2) -> float:
+    def Minimum_amount_of_rebar(fIAp, fIxi, fIdb, fIdwire, fIAsmin, fIuserdefined2) -> float:
         """최소철근량
 
         Args:

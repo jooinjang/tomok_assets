@@ -99,7 +99,7 @@ class KDS249011_04020409_02 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Design_Strength_Of_Pot(fIVRd, fIVSd, fIwidsop, fIR, fIfy, fIEd, fID,fIuserdefined) -> bool:
+    def Design_Strength_Of_Pot( fIVSd,  fIwidsop,  fIR,  fIfy,  fIEd,  fID) -> bool:
         """피스톤과 포트 접촉부 검토
 
         Args:
@@ -132,7 +132,6 @@ class KDS249011_04020409_02 (RuleUnit):
             return "Pass"
           else:
             return "Fail"
-
 
 
 

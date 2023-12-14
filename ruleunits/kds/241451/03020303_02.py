@@ -81,7 +81,7 @@ class KDS241451_03020303_02 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Design_Resistance(fICoeres,fISQtau,fIResman,fIResstr,fIAngsoi,fIV,fIuserdefined) -> float:
+    def Design_Resistance(fICoeres, fIResman, fIResstr, fIAngsoi, fIV) -> float:
         """설계저항력
         Args:
             fOQr (float): 설계저항력
@@ -110,7 +110,6 @@ class KDS241451_03020303_02 (RuleUnit):
         elif  fIuserdefined == 3: #기초 아래 흙이 사질토가 아닌 경우
           fOQr = fICoeres * fISQtau + fIResman * fIResstr
           return fOQr
-
 
 
 # 

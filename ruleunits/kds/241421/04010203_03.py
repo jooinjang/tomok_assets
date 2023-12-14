@@ -93,7 +93,7 @@ class KDS241421_04010203_03 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Design_shear_strength_of_members_with_inclined_shear_bars(fOVsd,fIVdmax,fIVdmaxcom,fIphis,fIfvy,fIAv,fIz,fIs,fItheta,fIalpha,fInu,fIphic,fIfck,fIbw,fIfy,fIAvmax,fIuserdefined) -> bool:
+    def Design_shear_strength_of_members_with_inclined_shear_bars(fIVdmax, fIVdmaxcom, fIphis, fIfvy, fIAv, fIz, fIs, fItheta, fIalpha, fInu, fIphic, fIfck, fIbw, fIfy, fIAvmax) -> bool:
         """경사 전단철근이 배치된 부재의 설계전단강도
 
         Args:

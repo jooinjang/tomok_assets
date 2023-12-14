@@ -72,7 +72,7 @@ class KDS249011_04020406_01 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Minimum_Thickness_Of_The_Elastic_Pad(fOtmin, fIalphadmax, fIdprime) -> bool:
+    def Minimum_Thickness_Of_The_Elastic_Pad( fIalphadmax,  fIdprime) -> bool:
         """탄성패드 설계
 
         Args:
@@ -88,7 +88,6 @@ class KDS249011_04020406_01 (RuleUnit):
         fOtmin = max(3.33*fIalphadmax*fIdprime , fIdprime/15)
 
         return fOtmin
-
 
 
 

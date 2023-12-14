@@ -97,7 +97,7 @@ class KDS241421_04010203_02 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Design_shear_strength_off_members_with_vertical_stirrups(fOVd,fIVsd,fIVdmax,fIVdmaxcom,fIphis,fIphic,fIfvy,fIAv,fIz,fIs,fItheta,fInu,fIfy,fIfck,fIbw,fIAvmax,fIuserdefined) -> bool:
+    def Design_shear_strength_off_members_with_vertical_stirrups(fIVsd, fIVdmaxcom, fIphis, fIphic, fIfvy, fIAv, fIz, fIs, fItheta, fInu, fIfy, fIfck, fIbw, fIAvmax) -> bool:
         """수직 스터럽이 배치된 부재의 설계전단강도
 
         Args:

@@ -63,7 +63,7 @@ class KDS241421_04010203_10 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Effective_strength_factor_of_lightweight_concrete(fOnu,fIetal,fIfck) -> float:
+    def Effective_strength_factor_of_lightweight_concrete(fIetal, fIfck) -> float:
         """경량콘크리트의 유효강도계수
 
         Args:

@@ -73,7 +73,7 @@ class KDS241421_04060503_02 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Thrust_reinforcement_at_the_center_of_the_floor_section(fIL,fIamorei,fIamrbts,fIuserdefined) ->float:
+    def Thrust_reinforcement_at_the_center_of_the_floor_section(fIL, fIamorei, fIamrbts) ->float:
         """바닥판 지간 중앙부의 배력철근
         Args:
              fIL (float): 바닥판의 지간
@@ -97,7 +97,6 @@ class KDS241421_04060503_02 (RuleUnit):
             return "Pass"
           else:
             return "Fail"
-
 
 
 # 

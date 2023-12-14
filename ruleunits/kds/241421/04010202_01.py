@@ -77,7 +77,7 @@ class KDS241421_04010202_01 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def designed_shear_strength(fOVcd,fIVcdmin,fIphic,fIfck,fIfctk,fIk,fId,fIrho,fIAs,fIbw,fIfn,fINu,fIAc) -> float:
+    def designed_shear_strength(fIVcdmin, fIphic, fIfck, fIfctk, fId, fIAs, fIbw, fINu, fIAc) -> float:
         """설계전단강도
 
         Args:

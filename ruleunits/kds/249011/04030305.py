@@ -74,7 +74,7 @@ class KDS249011_04030305 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Maximum_Compressive_Stress(fOsigmamax,fIAe,fIPmax) -> bool:
+    def Maximum_Compressive_Stress(fIAe, fIPmax) -> bool:
         """최대압축응력
 
         Args:

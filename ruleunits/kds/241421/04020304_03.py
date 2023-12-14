@@ -71,7 +71,7 @@ class KDS241421_04020304_03 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def maximum_spacing_of_final_cracks(fOmaxspc,fIcensst,fIcc,fIk1,fIk2,fIrhoe,fIdb,fIh,fIc) -> float:
+    def maximum_spacing_of_final_cracks(fIcensst, fIcc, fIk1, fIk2, fIrhoe, fIdb, fIh, fIc) -> float:
         """최종 균열의 최대 간격
 
         Args:

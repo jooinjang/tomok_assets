@@ -88,7 +88,7 @@ class KDS241421_04060201_01 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Minimum_reinforcing_bar_cross_section(fOAsmin,fIAs,fIfck,fIfy,fIbw,fId,fIb,fIamrere,fItenref,fImincos,fIamosre,fImaxspr,fIslathi,fIthibp,fIuserdefined) ->float:
+    def Minimum_reinforcing_bar_cross_section(fIAs, fIfck, fIfy, fIbw, fId, fIb, fIamrere, fItenref, fImincos, fIamosre, fImaxspr, fIslathi, fIthibp) ->float:
         """최소 철근 단면적
         Args:
              fOAsmin (float): 최소 철근 단면적
@@ -135,7 +135,6 @@ class KDS241421_04060201_01 (RuleUnit):
             return fOAsmin, "Fail"
         elif fIamrere*(4/3) <= fItenref :
           return "Pass"
-
 
 
 

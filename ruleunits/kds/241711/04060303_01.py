@@ -60,7 +60,7 @@ class KDS241711_04060303_01(RuleUnit): # KDS241711_04060303_01
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정
     @rule_method
-    def axial_reinforcement_cross_sectional_area(fIaxrcsa,fItcsaco) -> bool:
+    def axial_reinforcement_cross_sectional_area(fIaxrcsa, fItcsaco) -> bool:
         """축방향철근 단면적
 
         Args:

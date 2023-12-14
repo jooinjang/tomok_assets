@@ -80,7 +80,7 @@ class KDS241421_04060301_01 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Maximum_spacing_between_reinforcing_bars(fImaspmr,fIh,fImasprr,fIuserdefined) ->float:
+    def Maximum_spacing_between_reinforcing_bars(fIh, fIuserdefined) ->float:
         """철근 최대간격
         Args:
              fImaspmr (float): 주철근의 최대간격

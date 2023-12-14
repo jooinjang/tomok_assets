@@ -63,7 +63,7 @@ class KDS241421_04010502_01 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Effective_design_strength_of_concrete_struts(fOfcdmax,fIphic,fIfck) -> float:
+    def Effective_design_strength_of_concrete_struts(fIphic, fIfck) -> float:
         """콘크리트 스트럿의 유효설계강도
 
         Args:

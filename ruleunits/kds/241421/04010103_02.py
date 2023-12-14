@@ -82,7 +82,7 @@ class KDS241421_04010103_02 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def bending_strength_of_member_subject_to_axial_force_and_biaxial_bending(fIslerat,fIbeq,fIheq,fIlambday,fIlambdaz,fIry,fIrz,fIez,fIey,fIMuy,fIMuz) -> bool:
+    def bending_strength_of_member_subject_to_axial_force_and_biaxial_bending(fIslerat, fIbeq, fIheq, fIlambday, fIlambdaz, fIry, fIrz, fIez, fIey, fIMuy, fIMuz) -> bool:
         """축력과 2축 휨이 작용하는 부재의 휨강도
 
         Args:

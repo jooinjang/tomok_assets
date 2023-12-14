@@ -82,7 +82,7 @@ class KDS241421_04010202_02 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def shear_strength(fOVcd,fII,fIQ,fIalphai,fIIx,fIlpt2,fIfn,fINu,fIAs,fIphis,fIfy,fIAc,flbw,fIphic,fIfctk) -> float:
+    def shear_strength(fII, fIQ, fIIx, fIlpt2, fINu, fIAs, fIphis, fIfy, fIAc, flbw, fIphic, fIfctk) -> float:
         """전단강도
 
         Args:

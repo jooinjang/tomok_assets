@@ -73,7 +73,7 @@ class KDS241421_04010203_06 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Nominal_Abdomen_Width(fIdiprdu,fObwnom,fIbw,fIphi,fIsumphi,fIuserdefined) -> float:
+    def Nominal_Abdomen_Width(fIdiprdu, fIbw, fIphi, fIsumphi) -> float:
         """공칭복부폭
 
         Args:

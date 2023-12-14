@@ -76,7 +76,7 @@ class KDS241421_04060201_03 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Depth_of_the_neutral_axis_in_extreme_limits(fIdepnea,fOcmax,fIdelta,fId,fIepsiloncu) ->float:
+    def Depth_of_the_neutral_axis_in_extreme_limits(fIdepnea, fIdelta, fId, fIepsiloncu) ->float:
         """극한한계상태에서 중립축의 깊이
         Args:
              fIdepnea (float): 중립축의 깊이

@@ -92,7 +92,7 @@ class KDS249011_04020203_02 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Movable_Bearing_Change(fOmovnch,fIdeltalt,fIdeltalr,fIdeltals,fIdeltalc,fIalpha,fIl,fIbeta,fIPi,fIAc,fIEc,fIphi,fIdeltaT,fIhi,fIthetai) -> float:
+    def Movable_Bearing_Change(fIdeltalt,fIdeltalr,fIdeltals,fIdeltalc,fIalpha,fIl,fIbeta,fIPi,fIAc,fIEc,fIphi,fIdeltaT,fIhi,fIthetai) -> float:
         """가동받침의 이동량
 
         Args:

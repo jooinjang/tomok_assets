@@ -64,7 +64,7 @@ class KDS241711_04060303_07(RuleUnit): # KDS241711_04060303_07
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정
     @rule_method
-    def transeverse_reinforcement_spacing(fIdistan,fImicsdm,fIaxredi) -> bool:
+    def transeverse_reinforcement_spacing(fIdistan, fImicsdm, fIaxredi) -> bool:
         """횡방향 철근의 간격
 
         Args:

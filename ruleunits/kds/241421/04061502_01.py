@@ -64,7 +64,7 @@ class KDS241421_04061502_01 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def cross_sectional_area(fIAs,fIAg,fIfyd) -> bool:
+    def cross_sectional_area(fIAs, fIAg, fIfyd) -> bool:
         """건조수축 및 온도변화에 대한 보강
 
         Args:

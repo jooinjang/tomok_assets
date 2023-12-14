@@ -63,7 +63,7 @@ class KDS241421_040609_01 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Minimum_reinforcement_for_deep_beams(fIminamo,fIconcse) ->float:
+    def Minimum_reinforcement_for_deep_beams(fIconcse) ->float:
         """깊은보의 최소 철근량
         Args:
              fIminamo (float): 최소 철근량

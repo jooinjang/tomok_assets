@@ -62,7 +62,7 @@ class KDS241421_04010203_01 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def The_angle_of_inclination_of_the_strut_in_the_abdomen(fItheta) -> bool:
+    def The_angle_of_inclination_of_the_strut_in_the_abdomen() -> bool:
         """복부의 스트럿 경사각
 
         Args:

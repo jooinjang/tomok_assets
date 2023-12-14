@@ -76,7 +76,7 @@ class KDS241421_04010203_09 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def neutral_axis_depth(fIc,fIVu,fIbw,fInu,fIphic,fIfck,fItheta,fIAv,fIs,fIphis,fIfvy) -> bool:
+    def neutral_axis_depth(fIVu, fIbw, fInu, fIphic, fIfck, fItheta, fIs, fIphis, fIfvy) -> bool:
         """중립축 깊이
 
         Args:

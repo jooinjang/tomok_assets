@@ -65,7 +65,7 @@ class KDS241421_04060201_04 (RuleUnit):
     """
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
-    @rule_method
+    Function definition not found.
     def Cross_sectional_area_of_rebar (fIcrosat,fIconcse,fIcompba) ->float:
         """철근 단면적
         Args:
@@ -81,7 +81,6 @@ class KDS241421_04060201_04 (RuleUnit):
           return "Pass"
         else:
           return "Fail"
-
 
 
 # 

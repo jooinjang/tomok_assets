@@ -60,7 +60,7 @@ class KDS241421_04020304_01 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def design_crack_width(fOwk,fIlrmax,fIstrdif) -> float:
+    def design_crack_width(fIlrmax, fIstrdif) -> float:
         """2축 응력 상태의 거더 복부의 유효인장강도
 
         Args:
@@ -75,7 +75,6 @@ class KDS241421_04020304_01 (RuleUnit):
 
         fOwk = fIlrmax * fIstrdif
         return fOwk
-
 
 
 

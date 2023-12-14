@@ -67,7 +67,7 @@ class KDS249011_04020407_02 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Stress_On_Pot(fIstrpot, fIfy) -> bool:
+    def Stress_On_Pot(fIstrpot,  fIfy) -> bool:
         """포트 설계
 
         Args:

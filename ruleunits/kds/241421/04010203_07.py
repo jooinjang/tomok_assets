@@ -69,7 +69,7 @@ class KDS241421_04010203_07 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def additional_tensile_force(fOdeltaT,fIVu,fItheta,fIalpha) -> float:
+    def additional_tensile_force(fIVu, fItheta, fIalpha) -> float:
         """추가 인장력
 
         Args:

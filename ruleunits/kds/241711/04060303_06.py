@@ -60,7 +60,7 @@ class KDS241711_04060303_06(RuleUnit): # KDS241711_04060303_06
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정
     @rule_method
-    def additional_length_of_horizontal_rebar(fIadlehore,fIcolsiz) -> bool:
+    def additional_length_of_horizontal_rebar(fIadlehore, fIcolsiz) -> bool:
         """횡방향철근의 연장길이
 
         Args:

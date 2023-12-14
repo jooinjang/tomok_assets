@@ -68,7 +68,7 @@ class KDS249011_04020409_01 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Width_Of_Piston(fIw, fID, fIR,fIuserdefiend) -> bool:
+    def Width_Of_Piston(fIw,  fID,  fIR) -> bool:
         """피스톤과 포트 접촉부 검토
 
         Args:

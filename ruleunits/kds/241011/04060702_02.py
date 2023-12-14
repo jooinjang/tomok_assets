@@ -62,7 +62,7 @@ class KDS241011_04060702_02(RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정
     @rule_method
-    def  detail_of_effective_length_of_flange(fIWefffl,fIWphy,fObs,fILeffsp) -> bool:
+    def  detail_of_effective_length_of_flange(fIWefffl, fIWphy, fILeffsp) -> bool:
         """플렌지 유효폭 계산시 세부사항
         Args:
             fIWefffl (float): 플랜지 유효폭
@@ -77,7 +77,6 @@ class KDS241011_04060702_02(RuleUnit):
           return(fObs, "Pass")
         else:
           return(fObs, "Fail")
-
 
 
 

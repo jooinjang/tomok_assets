@@ -77,7 +77,7 @@ class KDS241421_04020304_02 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def strain_difference(fOstrdif,fIEs,fIEc,fIfso,fIfcte,fIkt,fIn,fIrhoe,fIActe,fIAs,fIAp,fIdcte,fIxi1,fIuserdefined,fIh,fId,fIc) -> float:
+    def strain_difference(fIEs, fIEc, fIfso, fIfcte, fIn, fIActe, fIAs, fIAp, fIdcte, fIxi1, fIh, fId, fIc) -> float:
         """변형률 차이
 
         Args:

@@ -70,7 +70,7 @@ class KDS241011_04060702_01(RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정
     @rule_method
-    def  effective_length_of_flange(fIWactfl,fIdo,fIb,fIbe,fIbm,fIbs,fIa,fIli,fOWefffl) -> float:
+    def  effective_length_of_flange(fIWactfl, fIdo, fIb, fIbe, fIbm, fIbs, fIa, fIli) -> float:
         """플랜지 유효폭
         Args:
             fIWactfl (float): 실제 플랜지의 폭
@@ -100,7 +100,6 @@ class KDS241011_04060702_01(RuleUnit):
           if fIbs is not None:
             fOWefffl = fIbs
             return(fOWefffl)
-
 
 
 

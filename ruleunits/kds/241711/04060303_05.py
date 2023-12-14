@@ -63,7 +63,7 @@ I-->J
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정
     @rule_method
-    def maximum_spacing(fImaxspa,fImicsdm,fIaxredi) -> bool:
+    def maximum_spacing(fImaxspa, fImicsdm, fIaxredi) -> bool:
         """최대간격
 
         Args:

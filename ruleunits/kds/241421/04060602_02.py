@@ -67,7 +67,7 @@ class KDS241421_04060602_02 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Axial_tensioners_and_reinforcement_in_non_composite_columns(fIAs,fIAg,fIAps,fIfpu,fIfy,fIfck) ->float:
+    def Axial_tensioners_and_reinforcement_in_non_composite_columns(fIAs, fIAg, fIAps, fIfpu, fIfy, fIfck) ->float:
         """비합성 기둥의 축방향 긴장재 및 철근
         Args:
              fIAs (float): 겹침이음 위치가 아닌 일반 단면에서의 축방향 철근 단면적

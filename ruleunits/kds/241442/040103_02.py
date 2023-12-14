@@ -77,7 +77,7 @@ class KDS241442_040103_02 (RuleUnit):
 
    # 작성하는 룰에 맞게 함수 이름과 내용을 수정
    @rule_method
-   def nominal_fatigue_strength_of_cable(fIdeltaFn,fIgamma,fIdeltaf,fIdeltaFth,fIN,fINth,fIcadeli,fOADTTSL) -> bool:
+   def nominal_fatigue_strength_of_cable(fIgamma, fIdeltaf, fIdeltaFth, fINth, fIcadeli, fOADTTSL) -> bool:
        """케이블의 공칭피로강도
 
        Args:

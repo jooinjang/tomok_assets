@@ -70,7 +70,7 @@ class KDS249011_04020405 (RuleUnit):
     """
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
-    @rule_method
+    Function definition not found.
     def Load_Dispersion_Angle (fIloadsa,fIuserdefined) -> bool:
         """하중 분산
         Args:
@@ -92,7 +92,6 @@ class KDS249011_04020405 (RuleUnit):
             return "Fail"
           else:
             return "Pass"
-
 
 
 

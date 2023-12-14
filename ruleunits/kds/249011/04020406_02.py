@@ -73,7 +73,7 @@ class KDS249011_04020406_02 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Design_Strength_Of_Elastic_Pads(fONRd, fId, fINsd, fIfek) -> bool:
+    def Design_Strength_Of_Elastic_Pads( fId,  fINsd,  fIfek) -> bool:
         """탄성패드 설계
 
         Args:

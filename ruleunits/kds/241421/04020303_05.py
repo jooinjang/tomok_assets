@@ -63,7 +63,7 @@ class KDS241421_04020303_05 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Effective_tensile_strength_of_girderweb(fOfcte,fIf2,fIfck,fIfctk) -> float:
+    def Effective_tensile_strength_of_girderweb(fIf2, fIfck, fIfctk) -> float:
         """2축 응력 상태의 거더 복부의 유효인장강도
 
         Args:

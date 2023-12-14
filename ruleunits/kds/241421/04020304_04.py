@@ -67,7 +67,7 @@ class KDS241421_04020304_04 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def maximum_crack_spacing(fIangsxb,fOlrmax,fItheta,fIlrlmax,fIlrtmax) -> float:
+    def maximum_crack_spacing(fIangsxb, fItheta, fIlrlmax, fIlrtmax) -> float:
         """최대균열간격
 
         Args:
@@ -85,7 +85,6 @@ class KDS241421_04020304_04 (RuleUnit):
           fOlrmax = 1/((math.cos(fItheta*math.pi/180)/fIlrlmax)+(math.sin(fItheta*math.pi/180)/fIlrtmax))
 
         return fOlrmax
-
 
 
 

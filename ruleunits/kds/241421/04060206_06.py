@@ -63,7 +63,7 @@ class KDS241421_04060206_06 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Maximum_spacing_of_shear_bars(fOsmax,fId,fIalpha) ->float:
+    def Maximum_spacing_of_shear_bars(fId, fIalpha) ->float:
         """전단철근의 최대 간격
         Args:
              fOsmax (float): 전단철근의 최대 간격

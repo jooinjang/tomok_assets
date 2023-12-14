@@ -65,7 +65,7 @@ class KDS241421_040609_02 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Spacing_between_rebars(fIspbere,fIdebeth) ->bool:
+    def Spacing_between_rebars(fIspbere, fIdebeth) ->bool:
         """철근망의 두 인접한 철근 사이의 간격
         Args:
              fIspbere (float): 철근 사이의 간격

@@ -75,7 +75,7 @@ class KDS249011_04030306 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Tensile_Stresses_Due_To_Negative_Reaction_Forces_Acting_On_Seismic_Isolation_Bracing(fOsigmat,fIV,fIAe,fIsigmate) -> bool:
+    def Tensile_Stresses_Due_To_Negative_Reaction_Forces_Acting_On_Seismic_Isolation_Bracing(fOsigmat, fIV, fIAe, fIsigmate) -> bool:
         """지진격리받침에 작용하는 부반력에 의한 인장응력
 
         Args:

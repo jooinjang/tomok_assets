@@ -63,7 +63,7 @@ class KDS241711_04060303_04(RuleUnit): # KDS241711_04060303_04
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정
     @rule_method
-    def lap_joint(fIlapjoi,fIdilajo,fItozxre) -> bool:
+    def lap_joint(fIlapjoi, fIdilajo, fItozxre) -> bool:
         """겹침이음
 
         Args:

@@ -69,7 +69,7 @@ class KDS241451_03020301_01 (RuleUnit):
     """
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
-    @rule_method
+    Function definition not found.
     def Diminished_Support (fOqr,fIresfac,fIqn) -> bool:
         """감소된 지지력
         Args:
@@ -84,7 +84,6 @@ class KDS241451_03020301_01 (RuleUnit):
 
         fOqr = fIresfac*fIqn
         return fOqr
-
 
 
 # 

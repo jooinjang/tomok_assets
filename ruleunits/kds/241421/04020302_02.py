@@ -102,7 +102,7 @@ class KDS241421_04020302_02 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Minimum_amount_of_rebar_required_within_concrete_tensile_area(fOAsmin,fIAct,fIfs,fIfct,fIkc,fIfn,fINu,fIhstar,fIk1,fINcr,fIk,fIh,fIflawid,fIuserdefined) -> float:
+    def Minimum_amount_of_rebar_required_within_concrete_tensile_area(fIAct, fIfs, fIfct, fIfn, fINu, fIk1, fINcr, fIh, fIflawid) -> float:
         """콘크리트 인장 영역 내의 소요 최소 철근량
 
         Args:

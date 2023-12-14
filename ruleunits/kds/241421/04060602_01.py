@@ -69,7 +69,7 @@ class KDS241421_04060602_01 (RuleUnit):
 
     # 작성하는 룰에 맞게 함수 이름과 내용을 수정,
     @rule_method
-    def Axial_reinforcement_in_columns(fIAs,fIAg,fIAps,fIfpu,fIfy,fIfck,fIfpe) ->float:
+    def Axial_reinforcement_in_columns(fIAs, fIAg, fIAps, fIfpu, fIfy, fIfck, fIfpe) ->float:
         """기둥의 축방향 철근
         Args:
              fIAs (float): 겹침이음된 철근을 포함한 모든 철근의 총 단면적
